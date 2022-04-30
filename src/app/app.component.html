@@ -1,0 +1,21 @@
+<div class="maze-container">
+  <svg id="maze" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <circle id="dot" r="0.5" stroke="lightGrey" fill="lightGrey" pointer-events="none"/>
+    </defs>
+    <ng-container *ngFor="let column of maze.data; let x = index">
+      <ng-container *ngFor="let cell of maze.data[x]; let y = index">
+        <ng-container *ngIf="outlineType === 'dot'; else gridOutline">
+          <use href="#dot" [ngStyle]="{x: 1 + x * size + 'px', y: 1 + y * size + 'px'}"/>
+        </ng-container>
+        <ng-template #gridOutline>
+          <rect stroke="lightGrey" fill="white" [ngStyle]="{x: 1 + x * size + 'px', y: 1 + y * size + 'px',
+                                                            width: size + 'px', height: size + 'px'}"/>
+        </ng-template>
+      </ng-container>
+    </ng-container>
+  </svg>
+</div>
+<div class="settings-container">
+
+</div>

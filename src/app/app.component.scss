@@ -1,0 +1,43 @@
+:host {
+  height: 100%;
+  width: 100%;
+}
+
+.maze-container {
+  width: 70%;
+}
+
+.settings-container {
+  width: 30%;
+}
+
+#maze {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  user-select: none;
+
+  .dot, .grid {
+    position: absolute;
+  }
+
+  .dot {
+    width: 4px;
+    height: 4px;
+    background-color: lightgrey;
+    //border-radius: 50%;
+  }
+
+  .grid {
+    border: 2px solid lightgrey;
+    opacity: 0.3;
+  }
+}
+
+.wall {
+  cursor: pointer;
+}
+
+.start text {
+  fill: darkgreen;
+}
